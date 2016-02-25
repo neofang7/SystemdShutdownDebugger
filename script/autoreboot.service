@@ -1,0 +1,13 @@
+[Unit]
+Description=Auto reboot
+DefaultDependencies=false
+After=network.target
+Conflicts=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/bin/autoreboot.sh
+
+[Install]
+WantedBy=multi-user.target
