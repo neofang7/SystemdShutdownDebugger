@@ -5,6 +5,8 @@ import string
 
 from LogEntry import *
 
+#TODO: Reboot logs.
+
 # Lable Definition
 LABEL_INSTALL_TRANS_S = 'poweroff.target: Trying to enqueue job poweroff.target/start/replace-irreversibly'
 LABEL_INSTALL_TRANS_E = 'poweroff.target: Enqueued job poweroff.target/start'

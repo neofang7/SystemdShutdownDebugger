@@ -25,6 +25,7 @@ class LogEntry:
            procEndIndex = leftString.find(']:') + 1
            self.Process = leftString[0 : procEndIndex]
            self.Content = leftString[procEndIndex + 1 :]
+                      
        else:
            print "Invalid Line:", line
 

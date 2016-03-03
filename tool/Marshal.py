@@ -6,6 +6,7 @@ from SystemdLog import *
 
 
 def doLogObjectComparation(SLogA, SLogB):
+    print 'Compare log file %s %s'%(SLogA.mFileName, SLogB.mFileName)
     pathsA = SLogA.mFileName.split('/')
     pathsB = SLogB.mFileName.split('/')
     genFolder = '%s/gen'%(pathsA[0])
@@ -52,7 +53,8 @@ def fetchLogObjsInFolder(folderPath):
     
     objs = list()
     for l in logs:
-        l = '%s/%s'%(folderPath, l)
+        l = '%s%s'%(folderPath, l)
+        print l
         if os.path.isdir(l) == True:
             continue
         o = SystemdLog(l)

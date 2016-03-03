@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TOTAL_COUNT=10
-COUNT_FILE=/down_count
+COUNT_FILE=/shutdown/down_count
 
 LOG_DIR=/shutdown/
 LOG_BASE_NAME=shutdown.txt
@@ -29,9 +29,10 @@ cd $LOG_DIR
 NEW_LOG_NAME=$LOG_BASE_NAME'.'$TIMESTAMP
 mv /shutdown.txt $NEW_LOG_NAME
 
-sleep 1m
-#echo 0 > /sys/class/rtc/rtc0/wakealarm
-#echo `date '+%s' -d '+ 30 seconds'` > /sys/class/rtc/rtc0/wakealarm
+let DELAY=$TIMESTAMP%10
+DELAY_TIME=$DELAY'm'
+echo $DELAY_TIME
+
 echo 'System starts to poweroff'
 
 date -s "23:58:30"
